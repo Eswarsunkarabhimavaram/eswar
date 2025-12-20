@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>e-commerce website</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body >
+        
+
+        <button id="cart-toggle-btn" onclick="toggleCart()"><img src="trolly.png" alt="" width="20px"></button>
+        <div class="left">
+            <span class="s1"><img src="trolly.png" alt="" width="20px"><span style="font-size: 30px; color: red;">Eswar</span> Cart</span><br>
+            <input type="text" placeholder="search prosucts....." oninput="searchProducts()" id="search"/>
+            <div class="products" id="products"></div>
+           
+        </div>
+        <div class="cart">
+            <span class="s2">Your cart </span>
+            <div class="cart-c" id="cart-c">
+               
+            </div>
+            <p class="total" id="total">Total:$0</p>
+        </div>
+
+        <script src="script.js">
+           
+        </script>
+
+
+    </body>
+</html>
