@@ -1,0 +1,195 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="C:\Users\Easwar\OneDrive\Desktop\clgntss/durjoe1.png">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #message {
+            margin-top: 15px;
+            color: red;
+        }
+        .head img{
+            width: 100px;
+            margin-left: 70px;
+        }
+        .head h1{
+            font-size: 30px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <img src="C:\Users\Easwar\OneDrive\Desktop\clgntss/durjoe1.png" style="margin: 10px; mix-blend-mode: multiply;">
+	<h1 style="font-size: 25px;">DurJoE NOTES<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;PROVIDER  <br></h1>
+    </div>
+    <center><div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <div id="message"></div>
+    </div>
+    </center>
+    <script>
+        // Predefined users data
+        const users = [
+            { username: 'swrn', password: '23A21A05J6' },
+            { username: 'swrn', password: '23A21A05J7' },
+            { username: 'swrn', password: '23A21A05J8' },
+	     { username: 'swrn', password: '23A21A05J8' },
+		 { username: 'swrn', password: '23A21A05J9' },
+		 { username: 'swrn', password: '23A21A05K0' },
+		 { username: 'swrn', password: '23A21A05K1' },
+		 { username: 'swrn', password: '23A21A05K2' },
+		 { username: 'swrn', password: '23A21A05K3' },
+		 { username: 'swrn', password: '23A21A05K4' },
+		 { username: 'swrn', password: '23A21A05K5' },
+		 { username: 'swrn', password: '23A21A05K6' },
+		 { username: 'swrn', password: '23A21A05K7' },
+		 { username: 'swrn', password: '23A21A05K8' },
+		 { username: 'swrn', password: '23A21A05K9' },
+		 { username: 'swrn', password: '23A21A05L0' },
+		 { username: 'swrn', password: '23A21A05L1' },
+		 { username: 'swrn', password: '23A21A05L2' },
+		 { username: 'swrn', password: '23A21A05L3' },
+		 { username: 'swrn', password: '23A21A05L4' },
+		 { username: 'swrn', password: '23A21A05L5' },
+		 { username: 'swrn', password: '23A21A05L6' },
+		 { username: 'swrn', password: '23A21A05L7' },
+		 { username: 'swrn', password: '23A21A05L8' },
+		 { username: 'swrn', password: '23A21A05L9' },
+		 { username: 'swrn', password: '23A21A05M0' },
+		 { username: 'swrn', password: '23A21A05M1' },
+		 { username: 'swrn', password: '23A21A05M2' },
+		 { username: 'swrn', password: '23A21A05M3' },
+		 { username: 'swrn', password: '23A21A05M4' },
+		 { username: 'swrn', password: '23A21A05M5' },
+		 { username: 'swrn', password: '23A21A05M6' },
+		 { username: 'swrn', password: '23A21A05M7' },
+		 { username: 'swrn', password: '23A21A05M8' },
+		 { username: 'swrn', password: '23A21A05M9' },
+		 { username: 'swrn', password: '23A21A05N0' },
+		 { username: 'swrn', password: '23A21A05N1' },
+		 { username: 'swrn', password: '23A21A05N2' },
+		 { username: 'swrn', password: '23A21A05N3' },
+		 { username: 'swrn', password: '23A21A05N4' },
+		 { username: 'swrn', password: '23A21A05N5' },
+		 { username: 'swrn', password: '23A21A05N6' },
+		 { username: 'swrn', password: '23A21A05N7' },
+		 { username: 'swrn', password: '23A21A05N8' },
+		 { username: 'swrn', password: '23A21A05N9' },
+		 { username: 'swrn', password: '23A21A05O0' },
+		 { username: 'swrn', password: '23A21A05O1' },
+		 { username: 'swrn', password: '23A21A05O2' },
+		 { username: 'swrn', password: '23A21A05O3' },
+		 { username: 'swrn', password: '23A21A05O4' },
+		 { username: 'swrn', password: '23A21A05O5' },
+		 { username: 'swrn', password: '23A21A05O6' },
+		 { username: 'swrn', password: '23A21A05O7' },
+		 { username: 'swrn', password: '23A21A05O8' },
+		 { username: 'swrn', password: '23A21A05O9' },
+		 { username: 'swrn', password: '23A21A05P0' },
+		 { username: 'swrn', password: '23A21A05P1' },
+		 { username: 'swrn', password: '23A21A05P2' },
+		 { username: 'swrn', password: '23A21A05P3' },
+		 { username: 'swrn', password: '23A21A05P4' },
+		 { username: 'swrn', password: '23A21A05P5' },
+		 { username: 'swrn', password: '23A21A05P6' },
+		 { username: 'swrn', password: '23A21A05P7' },
+		 { username: 'swrn', password: '23A21A05P8' },
+		 { username: 'swrn', password: '23A21A05P9' },
+		 { username: 'swrn', password: '23A21A05Q0' },
+		 { username: 'swrn', password: '23A21A05Q1' },
+		 { username: 'swrn', password: '24A25A0519' },
+		 { username: 'swrn', password: '24A25A0520' },
+		 { username: 'swrn', password: '24A25A0521' },
+		 { username: 'swrn', password: '23A21A05J8' },
+		 { username: 'swrn', password: '23A21A05J8' },
+
+
+
+
+
+
+            // Add more users as needed
+        ];
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Validate user credentials
+            const user = users.find(user => user.username === username && user.password === password);
+
+            if (user) {
+                document.getElementById('message').innerText = 'Login successful!';
+                document.getElementById('message').style.color = 'green';
+                // Redirect to another HTML file
+                window.location.href = 'clgnts.html'; // Change this to your target HTML file
+            } else {
+                document.getElementById('message').innerText = 'Invalid username or password.';
+            }
+        });
+    </script>
+</body>
+</html>

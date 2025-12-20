@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Notes</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="C:\Users\Easwar\OneDrive\Desktop\clgntss/durjoe1.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body h1 {
+            font-family: sans-serif;
+            color: white;
+            background-color: rgb(14, 60, 189);
+            padding: 30px;
+        }
+       
+        body {
+            background-color: white;
+        }
+        
+        nav {
+            background-color: white;
+            color: black;
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 30px;
+        }
+        .menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 2em;
+    color: white;
+    background-color: black; /* Background behind icon */
+    padding: 5px 10px; 
+    border-radius: 5px; /* Makes it look better */
+}
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Ensure it appears */
+    }
+}
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 80px;
+
+        }
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            margin-top: 5px;
+        }
+        nav ul li a:hover {
+            color: orange;
+            transform: scale(1.1);
+            transition: transform 0.6s;
+        }
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: orange;
+            transform-origin: bottom right;
+            transition: transform 0.8s ease-out;
+        }
+        nav ul li a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            nav ul li {
+                width: 100%;
+                background: #444;
+            }
+            nav ul li a {
+                padding: 10px;
+            }
+        }
+        .r23head {
+            background-color:rgb(18, 58, 146) ;
+        }
+        .csehead {
+            background-color: blue; /* Ensure this is the correct blue you want */
+            padding: 10px;
+        }
+        .csebox h1{
+            
+            background-color: blue; /* Ensure this is the correct blue you want */
+            color: white;
+            margin: 0;
+            font-size: 24px;
+            text-align: center;
+            padding: 5px;
+        }
+        
+        .csehead h1:hover {
+            color: white;
+        }
+        .semester-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            
+            margin-top: 40px;
+        }
+        .semester-buttons .row {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            width: 100%;
+        }
+        .semester-buttons a {
+            padding: 20px;
+            background-color:rgb(13, 116, 150);
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            display: block;
+            width: 150px;
+        }
+        .semester-buttons a:hover,
+        .semester-buttons a:focus {
+            
+            transform: scale(1.1);
+            box-shadow: 0 0 40px #0000f1; /* Glowing effect */
+        }
+        
+        .thin-hr {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 20px 0;
+        }
+        footer {
+            background: #333;
+            color: #9997;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        footer ul li a:hover {
+            color: orange;
+        }
+        footer a {
+            margin: 80px;
+            font-size: 40px;
+        }
+        footer p {
+            font-size: 40px;
+            margin-bottom: 20px;
+            padding: 80px;
+        }
+        .fade-text {
+    animation: fade 2s infinite;
+}
+@keyframes fade {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+
+.slide-in {
+    animation: slideIn 1s;
+}
+@keyframes slideIn {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+.csehead h1 {
+    background: linear-gradient(to right, skyblue, black, red, pink, orange);
+    padding: 5px 10px; /* Adjust padding to reduce height */
+    margin: 0; /* Remove any default margin */
+    font-size: 24px; /* Adjust font size if necessary */
+    line-height: 1.2; /* Adjust line height */
+}
+.headclg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.headclg img{
+    width: 150px;
+    height: 90px;
+    margin-right: 10px;
+}
+.headclg h1{
+    width: 2000px;
+    display: flex;
+    justify-content: center;
+}
+.headclg h1:hover{
+    color: gold;
+}
+ .headclg .wl{
+    width: 50%;
+    border-radius: 50%;
+
+
+}
+.whatslog {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 80px;
+            z-index: 1000;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-left: 10px;
+            opacity: 1;
+        }
+.whatslog:hover{
+    transform: scale(1.1);
+    transition: transform 0.6s;
+}
+.icons
+{
+    display: block;
+    
+    
+}
+.icons img{
+    
+    width: 50px;
+    padding: 10px;
+    opacity: 1;
+    border-radius: 50%;
+}
+.icons
+    </style>
+</head>
+<body>
+    <center>
+        <div class="headclg">
+            <img src="C:\Users\Easwar\OneDrive\Desktop\clgntss/durjoe1.png" alt="">
+            <h1 class="blink-text">QUICK NOTES</h1>
+           
+        </div></center>
+
+
+    <nav >
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+        <ul id="navbar">
+            <li><a href="index.html" style="font-size: 20px;"><strong>Home</strong></a></li>
+            <li><a href="#about.html" style="font-size: 20px;"><strong>About</strong></a></li>
+            <li><a href="#" style="font-size: 20px;"><strong>Services</strong></a></li>
+            <li><a href="#" style="font-size: 20px;"><strong>Contact</strong></a></li>
+            
+        </ul>
+    </nav>
+    <div class="jntsyl" style="background: linear-gradient(blue,white); padding: 10px;">
+        <marquee behavior="scroll" direction="left">
+            <div class="links">
+                <div class="fade-text">
+        <a href="jnt.html" style="text-decoration: none; color: white; background-color:black; margin-right: 30px;" target="_blank">JNTUK R23 REGULATION </a>
+        <a href="jnt.html" style="text-decoration: none; color: white; background-color:black; margin-right: 30px; " target="_blank">JNTUK R23 REGULATION </a>
+        <a href="jnt.html" style="text-decoration: none; color: white; background-color:black; margin-right: 30px; " target="_blank">JNTUK R23 REGULATION </a>
+        <a href="jnt.html" style="text-decoration: none; color: white; background-color:black; margin-right: 30px; " target="_blank">JNTUK R23 REGULATION </a>
+        <a href="jnt.html" style="text-decoration: none; color: white; background-color:black; margin-right: 30px;" target="_blank">JNTUK R23 REGULATION </a>
+        <a href="jnt.html" style="text-decoration: none; color: white; background-color:black; margin-right: 30px;" target="_blank">JNTUK R23 REGULATION </a>
+        <a href="jnt.html" style="text-decoration: none; color: white; background-color:black; margin-right: 30px;" target="_blank">JNTUK R23 REGULATION </a>
+        <a href="jnt.html" style="text-decoration: none; color: white; background-color:black; margin-right: 30px;" target="_blank">JNTUK R23 REGULATION </a>
+        <a href="jnt.html" style="text-decoration: none; color: white; background-color:black; margin-right: 30px;"  target="_blank">JNTUK R23 REGULATION </a>
+        <a href="jnt.html" style="text-decoration: none; color: white; background-color:black; margin-right: 30px;" target="_blank">JNTUK R23 REGULATION </a>
+        <a href="jnt.html" style="text-decoration: none; color: white; background-color:black; margin-right: 30px;" target="_blank">JNTUK R23 REGULATION </a>
+
+                </div>        
+    </div>
+        </marquee>
+    </div>
+    </div>
+    <div class="r23head"><h2 style="color: orange; background-color: rgb(18, 58, 146);"><strong><u><center>R23 REGULATION</center></u></strong></h2></div>
+    <center><strong><p style="font-size: 30px;">"Unlock Your Potential, Embrace Education"</p></strong></center>
+    <div class="csebox"><strong><h1>COMPUTER SCIENCE AND ENGINEERING</h1></strong></div>
+    <div class="slide-in">
+    <div class="semester-buttons">
+        <div class="row">
+            <a href="C:\Users\Easwar\OneDrive\Desktop\clgntss/firstsem.html">FIRST SEM</a>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="C:\Users\Easwar\OneDrive\Desktop\clgntss/secondsem.html">SECOND SEM</a>
+        </div>
+        <div class="row" style="margin-top: 40px;">
+            <a href="file:///C:/Users/Easwar/OneDrive/Desktop/clgntss/thirdsem.html">THIRD SEM</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="c:/Users/Easwar/OneDrive/Desktop/clgntss/fourthsem.html">FOURTH SEM</a>
+        </div>
+        <div class="row" style="margin-top: 40px;">
+            <a href="C:/Users/Easwar/OneDrive/Desktop/classnotesproject/fifthsem.html">FIFTH SEM</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="C:\Users\Easwar\OneDrive\Desktop\clgntss/sixthsem.html">SIXTH SEM</a>
+        </div>
+        <div class="row" style="margin-top: 40px;">
+            <a href="C:\Users\Easwar\OneDrive\Desktop\clgntss/seventhsem.html">SEVENTH SEM</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="C:\Users\Easwar\OneDrive\Desktop\clgntss/eightsem.html">EIGHT SEM</a>
+        </div>
+    </div>
+    </div>
+    <a href="https://wa.me/8143711123" ><img src="C:\Users\Easwar\OneDrive\Desktop\clgntss/wl3.png" style="mix-blend-mode: multiply;" class="whatslog"></a>
+    <hr class="thin-hr">
+    <footer>
+        <strong><p>CONTACT: 1234567890</p></strong>
+        <ul>
+            <li><a href="#">ESWAR</a></li>
+            <li><a href="#">JYOSHNA</a></li>
+            <li><a href="#">DURGA</a></li>
+        </ul>
+        <strong><p>@SWARNANDHRA COLLEGE OF ENGINEERING AND TECHNOLOGY</p></strong>
+        <div class="icons">
+        
+      <a href=""><img src="C:\Users\Easwar\OneDrive\Desktop\clgntss/inst.jpeg"></a>
+       <a  href=""><img src="C:\Users\Easwar\OneDrive\Desktop\clgntss/fab.jpeg"></a>
+       <a href=""><img src="C:\Users\Easwar\OneDrive\Desktop\clgntss/ldn.jpeg"></a>
+
+        </div>
+    </footer>
+    <script>
+        document.getElementById('menu-icon').addEventListener('click', function() {
+            var navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        });
+    </script>
+    
+   
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2025/01/29/16/20250129165627-YRSE90R3.js"></script>
+    
+    
+</body>
+</html>

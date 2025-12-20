@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page with Blend Mode Video</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="C:\Users\Easwar\OneDrive\Desktop\clgntss/durjoe1.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;          
+            font-family: Arial, sans-serif;
+            background: linear-gradient(pink, white);
+        }
+        .map{
+            width: 100px;
+            border: 1px solid green;
+        }
+
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+            opacity: 0.7; /* Adjust the opacity to control blend effect */
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        .head {
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Space out images */
+    text-align: center;
+    padding: 30px;
+}
+.head img {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.head h1 {
+    flex-grow: 1; /* Allow heading to take available space */
+    text-align: center;
+    background: red;
+    padding: 10px;
+    border-radius: 5px;
+    mix-blend-mode: overlay;
+}
+
+        .head a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: rgba(0, 123, 255, 0.7);
+            color: white;
+            border-radius: 5px;
+            margin: 10px;
+            display: inline-block;
+            mix-blend-mode: overlay; /* Apply blend mode */
+        }
+
+        .head a:hover {
+            background-color: rgba(0, 86, 179, 0.7);
+        }
+
+        .secondhead h1 {
+            font-size: 40px;
+            margin-top: 30px;
+            background: blue; /* Semi-transparent background */
+            display: inline-block;
+            mix-blend-mode: overlay; /* Apply blend mode */
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .course {
+            background-color: blue;
+            display: flex;
+            justify-content: center; /* Center the content horizontally */
+            align-items: center; /* Center the content vertically */
+        }
+        
+        .course h1 {
+            color: white;
+        }
+
+        .base {
+            padding: 20px;
+            
+        }
+
+        .dcourse img {
+            width: 1000px;
+             /* Limit the maximum width of the image */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Scrollbar styling for WebKit browsers */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        .log-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            margin-top: 10px;
+            width: 150px; /* Increase the length of the button */
+            padding: 10px;
+            background-color: rgba(0, 123, 255, 0.7);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+
+.log-btn a {
+    text-decoration: none;
+    padding: 10px 20px;
+    
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 150px;
+}
+
+.whatslog {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 80px;
+            z-index: 1000;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-left: 10px;
+            opacity: 1;
+        }
+.whatslog:hover{
+    transform: scale(1.1);
+    transition: transform 0.6s;
+}
+    </style>
+</head>
+<body>
+    <video autoplay muted loop class="video-bg">
+        <source src="C:/Users/Easwar/OneDrive/Desktop/clgintro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="content">
+        <div class="log-btn">
+        <a href="login.html" target="_blank">LOGIN</a>
+        </div>
+        <div class="head">
+            <img src="C:/Users/Easwar/OneDrive/Pictures/swrn.png" alt="College Logo">
+            
+            <h1>SWARNANDHRA COLLEGE OF ENGINEERING AND TECHNOLOGY</h1>
+            <img src="C:\Users\Easwar\OneDrive\Desktop\clgntss/durjoe1.png">
+        </div>
+        <div class="secondhead">
+            <h1>COMPUTER SCIENCE AND ENGINEERING</h1>
+        </div>
+        <h1 style="color: black;"><strong>ABOUT:</strong></h1>
+        <div class="scroll">
+            <!-- Add scrollable content here if needed -->
+        </div>
+        <div class="base">
+            <h1 style="color: black;"><center>OUR FEATURED COURSES<center></h1>
+            <div class="course">
+                <h1>DIPLOMA COURSES (3 YEARS)</h1>
+            </div>
+            <div class="dcourse">
+                <img src="C:/Users/Easwar/OneDrive/Pictures/Screenshots/dcourse.png" alt="">
+            </div>
+        </div>
+    </div>
+    <a href="https://wa.me/8143711123" ><img src="C:\Users\Easwar\OneDrive\Desktop\clgntss/wl3.png" style="mix-blend-mode: multiply;" class="whatslog"></a>
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.1229371671793!2d81.65538207426395!3d16.418581584312637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37d707cf0d34a5%3A0xab73194f64b31016!2sSwarnandhra%20College%20of%20Engineering%20and%20Technology(autonomous)!5e0!3m2!1sen!2sin!4v1736358519701!5m2!1sen!2sin" width="500" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    
+        
+   
+    
+   
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2025/01/29/16/20250129165627-YRSE90R3.js"></script>
+    
+    
+    
+    
+    
+    
+</body>
+</html>
