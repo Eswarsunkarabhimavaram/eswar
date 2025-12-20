@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background:url('marble2.jpeg');
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    background: url('marble.jpeg');
+    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-screen {
+    width: 100%;
+    height: 40px;
+    text-align: right;
+    margin-bottom: 10px;
+    font-size: 24px;
+    padding: 6px;
+    background: url('marble2.jpeg');
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: aqua;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: gold;
+}
+
+.btn:active {
+    background-color: #ccc;
+}
+
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text"  color="red" class="calculator-screen" id="calculator-screen" readonly>
+
+        <div class="calculator-buttons">
+            <button type="button" class="btn" value="7">7</button>
+            <button type="button" class="btn" value="8">8</button>
+            <button type="button" class="btn" value="9">9</button>
+            <button type="button" class="btn" value="/">/</button>
+
+            <button type="button" class="btn" value="4">4</button>
+            <button type="button" class="btn" value="5">5</button>
+            <button type="button" class="btn" value="6">6</button>
+            <button type="button" class="btn" value="*">*</button>
+
+            <button type="button" class="btn" value="1">1</button>
+            <button type="button" class="btn" value="2">2</button>
+            <button type="button" class="btn" value="3">3</button>
+            <button type="button" class="btn" value="-">-</button>
+
+            <button type="button" class="btn" value="0">0</button>
+            <button type="button" class="btn" value=".">.</button>
+            <button type="button" class="btn" value="C">C</button>
+            <button type="button" class="btn" value="+">+</button>
+            <button type="button" class="btn" value="D">D</button>
+
+            <button type="button" class="btn" value="=">=</button>
+        </div>
+    </div>
+
+    <script>const calculatorScreen = document.getElementById('calculator-screen');
+        const buttons = document.querySelectorAll('.btn');
+        
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const value = button.value;
+                
+                if (value === 'C') {
+                    calculatorScreen.value = '';
+                } else if (value === '=') {
+                    try {
+                        calculatorScreen.value = eval(calculatorScreen.value);
+
+                    } catch {
+                        calculatorScreen.value = 'Error';
+                    }
+                }
+                else if(value==='D')
+                {
+                    calculatorScreen.value=calculatorScreen.value.slice(0,-1);
+                }
+                 else {
+                    calculatorScreen.value += value;
+                }
+            });
+        });
+        </script>
+</body>
+</html>
