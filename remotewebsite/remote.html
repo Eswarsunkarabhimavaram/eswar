@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Places</title>
+    <style>
+        body {
+            border: 20px solid red;
+            padding: 20px;
+            margin: 0;
+            border-radius: 5px;
+            overflow-y: auto; /* Enable vertical scrolling */
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+        }
+        .header {
+            position: fixed; /* Fixes the position */
+            top: 0; /* Sticks the heading to the top */
+            left: 50%; /* Centers the heading horizontally */
+            transform: translateX(-50%); /* Centers the heading horizontally */
+            width: 100%; /* Ensures it spans the full width */
+            z-index: 1000; /* Ensures it stays on top */
+            background: linear-gradient(to right, orange, red);
+            text-align: center;
+        }
+        .header img {
+            width: 50px;
+            height: 40px;
+        }
+        .page-content {
+            margin-top: 150px; /* Adds some space at the top to prevent overlap */
+        }
+        img {
+            background: linear-gradient(to right, white, aqua);
+        }
+        p {
+            background-color: green;
+        }
+        .nav a {
+            text-decoration: none;
+        }
+        .nav {
+            padding-left: 100px;
+            font-size: 30px;
+        }
+        .nav :hover {
+            background: linear-gradient(to right, red, gold);
+        }
+        .india {
+            background: linear-gradient(to right, orange, green);
+        }
+        .india img {
+            mix-blend-mode: multiply;
+        }
+        .wish {
+            width: 200px;
+            height: 200px;
+            padding-top: 50px;
+        }
+        .slider-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 20px 0; /* Add some margin to separate from other sections */
+            background: linear-gradient(aqua, gold);
+        }
+        .slider {
+            width: 100%;
+            max-width: 1080px; /* Set the maximum width */
+            height: 720px; /* Set the height to match the image dimensions */
+            position: relative;
+            overflow: hidden;
+        }
+        .slides {
+            display: flex;
+            transition: transform 1s ease;
+            animation: slideAnimation 16s infinite; /* Adjusted to accommodate more slides */
+        }
+        .slide {
+            position: relative; /* Position relative for absolute positioning of text */
+            min-width: 100%; /* Ensures each slide takes full width */
+            height: 100%; /* Ensures each slide takes full height of the slider */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+        .slide h1 {
+            position: absolute; /* Position absolute to place text over image */
+            color: white;
+            font-size: 2em;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            padding: 10px;
+            border-radius: 10px;
+        }
+        @keyframes slideAnimation {
+            0% { transform: translateX(0%); }
+            20% { transform: translateX(0%); }
+            25% { transform: translateX(-100%); }
+            45% { transform: translateX(-100%); }
+            50% { transform: translateX(-200%); }
+            70% { transform: translateX(-200%); }
+            75% { transform: translateX(-300%); }
+            95% { transform: translateX(-300%); }
+            100% { transform: translateX(0%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>REMOTE TOURISM</h1>
+        <img src="C:/Users/Easwar/OneDrive/Documents/ashokalogo.jpg" alt="Ashoka Logo">
+        <p>(Every corner of India)</p>
+    </div>
+    <div class="page-content">
+        <div style="background-color: aqua; margin: 10px;">
+            <div class="nav">                                                    
+                <a href="#">HOME</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="#">ABOUT</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="#">CONTACT</a>
+            </div>
+        </div>
+        <!-- Image Slider Section -->
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <h1>picnic</h1>
+                        <img src="C:/Users/Easwar/OneDrive/Pictures/familytour.jpeg" alt="picnic">
+                    </div>
+                    <div class="slide">
+                        <h1>temples</h1>
+                        <img src="C:/Users/Easwar/OneDrive/Pictures/htemple.png" alt="temples">
+                    </div>
+                    <div class="slide">
+                        <h1>Beaches</h1>
+                        <img src="C:/Users/Easwar/OneDrive/Pictures/fbeach.png" alt="Beaches">
+                    </div>
+                    <div class="slide">
+                        <h1>Cultural destinations</h1>
+                        <img src="C:/Users/Easwar/OneDrive/Pictures/cultudest.jpg" alt="cultural destinations">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <center>
+            <h1 style="color: brown; background-color: pink;">TO EXPLORE INDIA</h1>
+            <h2>CLICK ON INDIA</h2>
+            <div class="india">
+                <a href="up.html"><img src="C:/Users/Easwar/OneDrive/Documents/india.jpg" width="500px" height="1000px"></a>
+            </div>
+        </center>   
+        
+        <footer>
+            <strong>&copy; 2024 our team is "TRIP TRONIC MINDS"</strong>
+        </footer>
+    </div>
+</body>
+</html>

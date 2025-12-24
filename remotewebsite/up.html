@@ -1,0 +1,371 @@
+<html>
+    <head><title>explore places</title></head>
+    <style>
+        body{
+            border: 20px solid green;
+            background: linear-gradient(to right,pink,aqua);
+            
+        }
+        .row1
+        {
+            display: flex;
+
+        }
+        .column1
+        {
+            flex: 50%;
+            padding: 5px;
+            mix-blend-mode: multiply;
+            
+        }
+        .column2
+        {
+            flex: 50%;
+            padding-right:100px;
+            mix-blend-mode: multiply;
+            
+        }
+        .column3
+        {
+            flex: 50%;
+            padding-right:100px;
+            mix-blend-mode: multiply;
+        }
+        .column4
+        {
+            flex: 50%;
+            padding-right: 200px;
+            mix-blend-mode: multiply;
+        }
+        .column1 a{
+            text-decoration: none;
+        }
+        .column1 a:hover{
+            background: linear-gradient(to right,orange,blue);
+        }
+        .textonap:hover
+        {
+            background: linear-gradient(to right,pink,aqua);
+            border-radius: 10px;
+            width: 220px;
+        }
+        .textonts:hover
+        {
+            background: linear-gradient(to right,pink,aqua);
+            border-radius: 10px;
+            width: auto;
+        }
+        .textontn:hover
+        {
+            background: linear-gradient(to right,pink,aqua);
+            border-radius: 10px;
+            width: auto;
+        }
+        .textonker:hover
+        {
+            background: linear-gradient(to right,pink,aqua);
+            border-radius: 10px;
+            width: auto;
+        }
+        .textongoa:hover
+        {
+            background: linear-gradient(to right,pink,aqua);
+            border-radius: 10px;
+            width: auto;
+        }
+        .textonguja:hover
+        {
+            background: linear-gradient(to right,pink,aqua);
+            border-radius: 10px;
+            width: auto;
+        }
+        .textonkarn:hover
+        {
+            background: linear-gradient(to right,pink,aqua);
+            border-radius: 10px;
+            width: auto;
+        }
+        .textonodis:hover
+        {
+            background: linear-gradient(to right,pink,aqua);
+            border-radius: 10px;
+            width: auto;
+    
+        }
+        .textonpun:hover
+        {
+            background: linear-gradient(to right,red,yellow);
+            border-radius: 10px;
+            width: 90px;
+        }
+        .textonarun:hover
+        {
+            background: linear-gradient(to right,red,white);
+            border-radius: 10px;
+            width:200px;
+        }
+        .textonassa:hover
+        {
+            background: linear-gradient(to right,red,blue);
+            border-radius: 10px;
+            width: 120px;
+        }
+        .textonbiha:hover
+        {
+            background: linear-gradient(to right,red,blue);
+            border-radius: 10px;
+            width: 120px;
+        }
+        .textonchatti:hover
+        {
+            background: linear-gradient(to right,pink, yellow);
+            border-radius: 10px;
+            width: 130px;
+        }
+        .textondelhi:hover{
+            background: linear-gradient(to right,yellow,green);
+            border-radius: 10px;
+            width: 130px;
+        }
+        .textonhar:hover{
+            background: linear-gradient(to right,gold,green);
+            border-radius: 10px;
+            width: 90px;
+        }
+        .textonhp:hover
+        {
+            background: linear-gradient(to right,green,pink);
+            border-radius: 10px;
+            width: 250px;
+        }
+        .textonjhark:hover
+        {
+            background: linear-gradient(to right,skyblue,brown);
+            border-radius: 10px;
+            width: 120px;
+        }
+        .textonmp:hover{
+            background: linear-gradient(to right,green,blue);
+            border-radius: 10px;
+            width: 200px;
+        }
+        .textonmaha:hover{
+            background: linear-gradient(to right,red,pink);
+            border-radius: 10px;
+            width: 130px;
+        }
+        .textonmani:hover{
+            background: linear-gradient(to right,red,skyblue);
+            border-radius: 10px;
+            width: 100px;
+        }
+
+
+        .row2
+        {
+            display: flex;
+        }
+        .column5
+        {
+            flex: 50%;
+            mix-blend-mode: multiply;
+        }
+        .column6
+        {
+            flex:80%;
+            mix-blend-mode: multiply;
+
+        }
+        .column7
+        {
+            flex: 80%;
+            mix-blend-mode: multiply;
+        }
+        .column8
+        {
+            flex: 00%;
+            mix-blend-mode: multiply;
+        }
+        .row3
+        {
+            display: flex;
+        }
+        .column9
+        {
+            flex:20%;
+            mix-blend-mode: multiply;
+        }
+        .column10
+        {
+            flex:30%;
+            mix-blend-mode: multiply;
+            
+        }
+        .column11
+        {
+
+            flex: 20%;
+            mix-blend-mode: multiply;
+        }
+        .column12
+        {
+            flex: 30%;
+            mix-blend-mode: multiply;
+        }
+        .row4
+        {
+            display: flex;
+        }
+        .column13
+        {
+            flex: 30%;
+            padding-top: 40px;
+            mix-blend-mode: multiply;
+        }
+        .column14
+        {
+            flex: 30%;
+            padding-top:40px ;
+            mix-blend-mode: multiply;
+        }
+        .column15
+        {
+            flex: 70%;
+            padding-top: 40px;
+            mix-blend-mode: multiply;
+        }
+        .column16
+        {
+            flex: 50%;
+            padding-top: 40px;
+            mix-blend-mode: multiply;
+        }
+        .row5
+        {
+            display: flex;
+        }
+        .column17
+        {
+            flex: 20%;
+            padding-top: 40px;
+            mix-blend-mode: multiply;
+        }
+        .column18
+        {
+            flex: 30%;
+            padding-top: 60px;
+            mix-blend-mode: multiply;
+        }
+        .column19
+        {
+            flex:40%;
+            padding-top: 40px;
+            mix-blend-mode: multiply;
+        }
+        .column20
+        {
+            flex: 40%;
+            padding-top: 40px;
+            mix-blend-mode: multiply;
+        }
+    </style>
+    <body>
+       <center> <h1 style="background: linear-gradient(to right,blue,orange); padding-bottom: 10px;">EXPLORE POPULAR AND UNPOPULAR PLACES</h1>
+       <h6 style="background-color: red;">................................................................</h6>
+       </center>
+       <p style="font-size: 50px; color:mediumblue;background: linear-gradient(to right,orange,red);">Here are the states to explore popular and unpopular places!</p>
+       <center><p style="color: red; font-size: 50px; background: linear-gradient(to right,aqua,orange);">!IF U WANT TO VISIT PLACES PLZ CLICK ON EACH STATE IMAGE!</p></center>
+       <div class="row1">
+        <div class="column1">
+           <a href="ap.html"><img src="C:\Users\Easwar\OneDrive\Documents/ap.jpg" width="200px"></a>
+            <div class="textonap" style="color: orange;"><strong>ANDHRA PRADESH</strong></div>
+        </div>
+        <div class="column2">
+          <a href="ts.html"><img src="C:\Users\Easwar\OneDrive\Documents/tgs.jpeg"></a>
+            <div class="textonts" style="color:red;"><strong>TELANGANA</strong></div>
+        </div>
+        <div class="column3">
+            <a href=tn.html><img src="C:\Users\Easwar\OneDrive\Documents/tn.jpeg"></a>
+            <div class="textontn" style="color: blueviolet;"><strong>TAMILNADU<strong></strong></div>
+        </div>
+        <div class="column4">
+            <a href="ker.html"><img src="C:\Users\Easwar\OneDrive\Documents/ker.jpeg"></a>
+            <div class="textonker" style="color: violet;"><strong>KERALA</strong></div>
+        </div>
+
+       </div>
+       <div class="row2">
+        <div class="column5">
+            <a href="goa.html"><img src="C:\Users\Easwar\OneDrive\Documents/goa.jpeg"></a>
+            <div class="textongoa" style="color: red;"><strong>GOA</strong></div>
+        </div>
+        <div class="column6">
+            <a href="guja.html"><img src="C:\Users\Easwar\OneDrive\Documents/guja.jpeg"></a>
+            <div class="textonguja" style="color: orange;"><strong>GUJARAT</strong></div>
+        </div>
+        <div class="column7">
+            <a href="karn.html"><img src="C:\Users\Easwar\OneDrive\Documents/karn.jpeg"></a>
+            <div class="textonkarn" style="color: green;"><strong>KARNATAKA</strong></div>
+        </div>
+        <div class="column8">
+           <a href="odis.html"><img src="C:\Users\Easwar\OneDrive\Documents/odis.jpeg"></a>
+            <div class="textonodis" style="color: violet;"><strong>ODISHA</strong></div>
+        </div>
+       </div>
+       <div class="row3">
+        <div class="column9">
+            <a href="punj.html"><img src="C:\Users\Easwar\OneDrive\Documents/punj.jpeg" width="230px" height="220px"></a>
+            <div class="textonpun" style="color: black;"><strong>PUNJAB</strong></div>
+        </div>
+        <div class="column10">
+            <a href="arun.html"><img src="C:\Users\Easwar\OneDrive\Documents/arun.jpg" width="280px" height="220px"></a>
+            <div class="textonarun" style="color: green;"><strong>ARUNACHAL PRADESH</strong></div>
+        </div>
+        <div class="column11">
+            <a href="assa.html"><img src="C:\Users\Easwar\OneDrive\Documents/assa.jpeg" width="280px" height="220px"></a>
+            <div class="textonassa" style="color: darkslategrey;"><strong>ASSAM</strong></div>
+        </div>
+        <div class="column12">
+            <a href="biha" ><img src="C:\Users\Easwar\OneDrive\Documents/biha.PNG" width="280px" height="220px"></a>
+            <div class="textonbiha" style="color: green;"><strong>BIHAR</strong></div>
+        </div>
+
+       </div>
+       <div class="row4">
+        <div class="column13">
+            <a href="chatti.html"><img src="C:\Users\Easwar\OneDrive\Documents/chatti.jpeg" width="280px" height="220px"></a>
+            <div class="textonchatti" style="color: blueviolet;"><strong>CHATTISGARH</strong></div>
+        </div>
+        <div class="column14">
+            <a href="delhi.html"><img src="C:\Users\Easwar\OneDrive\Documents/delhi.PNG" width="280px" height="220px"></a>
+            <div class="textondelhi" style="color: black;"><strong>DELHI</strong></div>
+        </div>
+        <div class="column15">
+            <a href="harya.html"><img src="C:\Users\Easwar\OneDrive\Documents/harya.gif" width="280px" height="220px"></a>
+            <div class="textonhar" style="color: black;"><strong>HARYANA</strong></div>
+        </div>
+        <div class="column16">
+            <a href="hp.html"><img src="C:\Users\Easwar\OneDrive\Documents/hp.jpg" width="280px" height="220px"></a>
+            <div class="textonhp" style="color: black;"><strong>HIMACAHAL PRADESH</strong></div>
+        </div>
+       </div>
+       <div class="row5">
+        <div class="column17">
+            <a href="jhark.html"><img src="C:\Users\Easwar\OneDrive\Documents/jhark.gif" width="280px" height="220px"></a>
+            <div class="textonjhark" style="color: brown;"><strong>JHARKAND</strong></div>
+        </div>
+        <div class="column18">
+            <a href="mp.html"><img src="C:\Users\Easwar\OneDrive\Documents/mp.jpg" width="280px" height="220px"></a>
+            <div class="textonmp" style="color: black;"><strong>MADHYA PRADESH</strong></div>
+        </div>
+        <div class="column19">
+            <a href="mahar.html"><img src="C:\Users\Easwar\OneDrive\Documents/maha.jpg" width="280px" height="220px"></a>
+            <div class="textonmaha" style="color: black;"><strong>MAHARASTRA</strong></div>
+        </div>
+        <div class="column20">
+            <a href="mani.html"><img src="C:\Users\Easwar\OneDrive\Documents/mani.png" width="280px" height="220px"></a>
+            <div class="textonmani" style="color: black;"><strong>MANIPUR</strong></div>
+        </div>
+       </div>
+    </body>
+</html>
