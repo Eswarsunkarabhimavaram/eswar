@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Admin Dashboard | ESWAR
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body class="admin-page">
+
+
+<!-- ==================================================
+     SIDEBAR
+================================================== -->
+
+<aside class="sidebar">
+
+
+    <div class="sidebar-logo">
+
+        ESWAR
+
+    </div>
+
+
+
+    <p>
+        ADMIN PANEL
+    </p>
+
+
+
+    <a href="{{ url_for('home') }}">
+
+        🌐 View Website
+
+    </a>
+
+
+
+    <a href="#profile">
+
+        👤 Profile
+
+    </a>
+
+
+
+    <a href="#skills">
+
+        ⚡ Skills
+
+    </a>
+
+
+
+    <a href="#projects">
+
+        🚀 Projects
+
+    </a>
+
+
+
+    <a href="{{ url_for('logout') }}"
+       class="logout">
+
+        🚪 Logout
+
+    </a>
+
+
+</aside>
+
+
+
+<!-- ==================================================
+     MAIN DASHBOARD
+================================================== -->
+
+<main class="dashboard">
+
+
+    <!-- HEADER -->
+
+    <div class="dashboard-header">
+
+
+        <div>
+
+            <p>
+                ADMIN DASHBOARD
+            </p>
+
+
+            <h1>
+
+                Welcome,
+                {{ current_user.username }}
+
+            </h1>
+
+        </div>
+
+
+
+        <a href="{{ url_for('home') }}"
+           class="view-site">
+
+            View Portfolio →
+
+        </a>
+
+
+    </div>
+
+
+
+<!-- ==================================================
+     FLASH MESSAGES
+================================================== -->
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+
+
+    {% if messages %}
+
+
+        <div class="flash-messages">
+
+
+            {% for category, message in messages %}
+
+
+                <div class="message {{ category }}">
+
+                    {{ message }}
+
+                </div>
+
+
+            {% endfor %}
+
+
+        </div>
+
+
+    {% endif %}
+
+
+{% endwith %}
+
+
+
+<!-- ==================================================
+     PROFILE INFORMATION
+================================================== -->
+
+<section id="profile"
+         class="admin-card">
+
+
+    <h2>
+
+        👤 Profile Information
+
+    </h2>
+
+
+
+    <!-- PROFILE PHOTO -->
+
+    <div class="profile-upload-section">
+
+
+        <h3>
+
+            Profile Photo
+
+        </h3>
+
+
+
+        <!-- CURRENT PHOTO -->
+
+        <div class="admin-profile-photo">
+
+
+            <img
+                src="{{ url_for('static', filename='uploads/' + profile.profile_photo) }}"
+                alt="Current Profile Photo">
+
+        </div>
+
+
+
+        <!-- UPLOAD FORM -->
+
+        <form
+            method="POST"
+            action="{{ url_for('update_profile_photo') }}"
+            enctype="multipart/form-data">
+
+
+            <label>
+
+                Choose New Profile Photo
+
+            </label>
+
+
+            <input
+                type="file"
+                name="profile_photo"
+                accept=".jpg,.jpeg,.png,.webp"
+                required
+            >
+
+
+            <small>
+
+                JPG, JPEG, PNG or WEBP
+                • Maximum 5 MB
+
+            </small>
+
+
+            <button type="submit">
+
+                📸 Change Profile Photo
+
+            </button>
+
+
+        </form>
+
+
+    </div>
+
+
+
+    <hr>
+
+
+
+    <!-- PROFILE DETAILS -->
+
+    <h3>
+
+        Personal Information
+
+    </h3>
+
+
+
+    <form
+        method="POST"
+        action="{{ url_for('update_profile') }}">
+
+
+        <!-- NAME -->
+
+        <label>
+
+            Name
+
+        </label>
+
+
+        <input
+            type="text"
+            name="name"
+            value="{{ profile.name }}"
+            required
+        >
+
+
+
+        <!-- ROLE -->
+
+        <label>
+
+            Role
+
+        </label>
+
+
+        <input
+            type="text"
+            name="role"
+            value="{{ profile.role }}"
+            placeholder="AI/ML Engineer | Python Developer"
+        >
+
+
+
+        <!-- ABOUT -->
+
+        <label>
+
+            About
+
+        </label>
+
+
+        <textarea
+            name="about"
+            rows="6"
+            placeholder="Write something about yourself..."
+        >{{ profile.about }}</textarea>
+
+
+
+        <!-- EMAIL -->
+
+        <label>
+
+            Email
+
+        </label>
+
+
+        <input
+            type="email"
+            name="email"
+            value="{{ profile.email }}"
+        >
+
+
+
+        <!-- GITHUB -->
+
+        <label>
+
+            GitHub
+
+        </label>
+
+
+        <input
+            type="url"
+            name="github"
+            value="{{ profile.github }}"
+            placeholder="https://github.com/username"
+        >
+
+
+
+        <!-- LINKEDIN -->
+
+        <label>
+
+            LinkedIn
+
+        </label>
+
+
+        <input
+            type="url"
+            name="linkedin"
+            value="{{ profile.linkedin }}"
+            placeholder="https://linkedin.com/in/username"
+        >
+
+
+
+        <!-- SAVE -->
+
+        <button type="submit">
+
+            💾 Save Profile
+
+        </button>
+
+
+    </form>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     SKILLS
+================================================== -->
+
+<section id="skills"
+         class="admin-card">
+
+
+    <h2>
+
+        ⚡ Manage Skills
+
+    </h2>
+
+
+
+    <!-- ADD SKILL -->
+
+    <form
+        method="POST"
+        action="{{ url_for('add_skill') }}"
+        class="inline-form">
+
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Add new skill"
+            required
+        >
+
+
+        <button type="submit">
+
+            Add Skill
+
+        </button>
+
+
+    </form>
+
+
+
+    <!-- SKILL LIST -->
+
+    <div class="admin-list">
+
+
+        {% if skills %}
+
+
+            {% for skill in skills %}
+
+
+            <div class="list-item">
+
+
+                <span>
+
+                    {{ skill.name }}
+
+                </span>
+
+
+
+                <a
+                    href="{{ url_for('delete_skill', id=skill.id) }}"
+                    onclick="return confirm('Delete this skill?');">
+
+                    Delete
+
+                </a>
+
+
+            </div>
+
+
+            {% endfor %}
+
+
+        {% else %}
+
+
+            <p>
+
+                No skills added yet.
+
+            </p>
+
+
+        {% endif %}
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     ADD PROJECT
+================================================== -->
+
+<section id="projects"
+         class="admin-card">
+
+
+    <h2>
+
+        🚀 Add Project
+
+    </h2>
+
+
+
+    <form
+        method="POST"
+        action="{{ url_for('add_project') }}">
+
+
+        <!-- TITLE -->
+
+        <label>
+
+            Project Title
+
+        </label>
+
+
+        <input
+            type="text"
+            name="title"
+            placeholder="Loan Prediction System"
+            required
+        >
+
+
+
+        <!-- DESCRIPTION -->
+
+        <label>
+
+            Description
+
+        </label>
+
+
+        <textarea
+            name="description"
+            rows="6"
+            placeholder="Describe your project..."
+        ></textarea>
+
+
+
+        <!-- GITHUB -->
+
+        <label>
+
+            GitHub URL
+
+        </label>
+
+
+        <input
+            type="url"
+            name="github"
+            placeholder="https://github.com/..."
+        >
+
+
+
+        <!-- DEMO -->
+
+        <label>
+
+            Live Demo URL
+
+        </label>
+
+
+        <input
+            type="url"
+            name="demo"
+            placeholder="https://..."
+        >
+
+
+
+        <!-- ADD -->
+
+        <button type="submit">
+
+            ➕ Add Project
+
+        </button>
+
+
+    </form>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     EXISTING PROJECTS
+================================================== -->
+
+<section class="admin-card">
+
+
+    <h2>
+
+        📂 Existing Projects
+
+    </h2>
+
+
+
+    {% if projects %}
+
+
+        {% for project in projects %}
+
+
+        <div class="project-admin">
+
+
+            <div>
+
+
+                <h3>
+
+                    {{ project.title }}
+
+                </h3>
+
+
+                <p>
+
+                    {{ project.description }}
+
+                </p>
+
+
+
+                {% if project.github %}
+
+                <a
+                    href="{{ project.github }}"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    GitHub →
+
+                </a>
+
+                {% endif %}
+
+
+
+                {% if project.demo %}
+
+                <a
+                    href="{{ project.demo }}"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Live Demo →
+
+                </a>
+
+                {% endif %}
+
+
+            </div>
+
+
+
+            <a
+                href="{{ url_for('delete_project', id=project.id) }}"
+                onclick="return confirm('Delete this project?');">
+
+                🗑 Delete
+
+            </a>
+
+
+        </div>
+
+
+        {% endfor %}
+
+
+    {% else %}
+
+
+        <p>
+
+            No projects added yet.
+
+        </p>
+
+
+    {% endif %}
+
+
+</section>
+
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer>
+
+    <p>
+
+        ESWAR Admin Panel
+
+    </p>
+
+</footer>
+
+
+</main>
+
+
+</body>
+
+</html>

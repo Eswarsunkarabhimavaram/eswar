@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>{{ profile.name }} | Portfolio</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     NAVBAR
+================================================== -->
+
+<nav>
+
+    <div class="logo">
+        ESWAR
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#skills">
+            Skills
+        </a>
+
+        <a href="#projects">
+            Projects
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+
+        <!-- ADMIN -->
+
+        <a href="{{ url_for('login') }}"
+           class="admin-button">
+
+            Admin
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ==================================================
+     HERO SECTION
+================================================== -->
+
+<section id="home"
+         class="hero">
+
+
+    <div class="hero-content">
+
+
+        <!-- PROFILE PHOTO -->
+
+        <div class="profile-photo-container">
+
+            <img
+                src="{{ url_for('static', filename='uploads/' + profile.profile_photo) }}"
+                class="profile-photo"
+                alt="{{ profile.name }} Profile Photo">
+
+        </div>
+
+
+
+        <!-- SMALL INTRO -->
+
+        <p class="small-title">
+
+            HELLO, I'M
+
+        </p>
+
+
+
+        <!-- NAME -->
+
+        <h1>
+
+            {{ profile.name }}
+
+        </h1>
+
+
+
+        <!-- ROLE -->
+
+        <h2>
+
+            {{ profile.role }}
+
+        </h2>
+
+
+
+        <!-- ABOUT -->
+
+        <p>
+
+            {{ profile.about }}
+
+        </p>
+
+
+
+        <!-- BUTTONS -->
+
+        <div class="buttons">
+
+
+            <a href="#projects"
+               class="primary">
+
+                View Projects
+
+            </a>
+
+
+
+            {% if profile.github %}
+
+            <a href="{{ profile.github }}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="secondary">
+
+                GitHub
+
+            </a>
+
+            {% endif %}
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     ABOUT SECTION
+================================================== -->
+
+<section id="about"
+         class="section">
+
+
+    <h2 class="section-title">
+
+        About Me
+
+    </h2>
+
+
+
+    <div class="card">
+
+
+        <p>
+
+            {{ profile.about }}
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     SKILLS SECTION
+================================================== -->
+
+<section id="skills"
+         class="section">
+
+
+    <h2 class="section-title">
+
+        Skills
+
+    </h2>
+
+
+
+    <div class="skills-container">
+
+
+        {% if skills %}
+
+
+            {% for skill in skills %}
+
+
+            <div class="skill">
+
+                {{ skill.name }}
+
+            </div>
+
+
+            {% endfor %}
+
+
+        {% else %}
+
+
+            <p>
+
+                Skills will be added soon.
+
+            </p>
+
+
+        {% endif %}
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     PROJECTS SECTION
+================================================== -->
+
+<section id="projects"
+         class="section">
+
+
+    <h2 class="section-title">
+
+        Projects
+
+    </h2>
+
+
+
+    <div class="projects-container">
+
+
+        {% if projects %}
+
+
+            {% for project in projects %}
+
+
+            <div class="project-card">
+
+
+                <h3>
+
+                    {{ project.title }}
+
+                </h3>
+
+
+
+                <p>
+
+                    {{ project.description }}
+
+                </p>
+
+
+
+                <div class="project-links">
+
+
+                    {% if project.github %}
+
+                    <a href="{{ project.github }}"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        GitHub
+
+                    </a>
+
+                    {% endif %}
+
+
+
+                    {% if project.demo %}
+
+                    <a href="{{ project.demo }}"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        Live Demo
+
+                    </a>
+
+                    {% endif %}
+
+
+                </div>
+
+
+            </div>
+
+
+            {% endfor %}
+
+
+        {% else %}
+
+
+            <p>
+
+                Projects will be added soon.
+
+            </p>
+
+
+        {% endif %}
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     CONTACT SECTION
+================================================== -->
+
+<section id="contact"
+         class="section contact">
+
+
+    <h2 class="section-title">
+
+        Contact
+
+    </h2>
+
+
+
+    <div class="contact-card">
+
+
+        <!-- EMAIL -->
+
+        {% if profile.email %}
+
+        <p>
+
+            <strong>
+                Email:
+            </strong>
+
+
+            <a href="mailto:{{ profile.email }}">
+
+                {{ profile.email }}
+
+            </a>
+
+        </p>
+
+        {% endif %}
+
+
+
+        <!-- SOCIAL LINKS -->
+
+        <div class="contact-links">
+
+
+            {% if profile.linkedin %}
+
+            <a href="{{ profile.linkedin }}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="contact-link">
+
+                LinkedIn
+
+            </a>
+
+            {% endif %}
+
+
+
+            {% if profile.github %}
+
+            <a href="{{ profile.github }}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="contact-link">
+
+                GitHub
+
+            </a>
+
+            {% endif %}
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer>
+
+
+    <p>
+
+        © 2026 {{ profile.name }}.
+        All Rights Reserved.
+
+    </p>
+
+
+</footer>
+
+
+</body>
+
+</html>
